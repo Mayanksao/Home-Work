@@ -1,0 +1,45 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: #212121;
+  color: white;
+}
+.container {
+  border: 2px solid;
+  margin-top: 200px;
+}
+.box {
+  border: 2px solid white;
+  padding: 10px 0;
+  display: grid;
+  gap: 1rem;
+   
+  /* grid-template-areas:
+    "hdr hdr hdr hdr"
+    "sbr main main main"
+    "sbr main main main"
+    "ftr ftr ftr ftr"; */
+}
+#box-1 {
+  background-color: red;
+  /* grid-area: hdr; */
+}
+#box-2 {
+  background-color: rgb(30, 202, 255);
+  /* grid-area: sbr; */
+}
+#box-3 {
+  background-color: rgb(248, 7, 188);
+  /* grid-area: main; */
+}
+#box-4 {
+  background-color: rgb(34, 255, 5);
+  /* grid-area: ftr; */
+}
+/* #box-5 {
+  background-color: rgb(34, 29, 29);
+  grid-area: ftt;
+} */

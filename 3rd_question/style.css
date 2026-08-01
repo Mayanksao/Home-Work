@@ -1,0 +1,63 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Times New Roman", Times, serif;
+}
+
+body {
+  background-color: #212121;
+  color: white;
+}
+.navbar {
+  background-color: blue;
+  padding: 18px 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.links {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  padding: 0 10px;
+  cursor: pointer;
+}
+.content {
+  padding: 100px 50px;
+  line-height: 1.6rem;
+  display: flex;
+  gap: 5rem;
+}
+.boxes {
+  border: 5px solid;
+  width: 200%;
+  display: grid;
+  grid-template-areas:
+    "sbr hdr hdr hdr"
+    "sbr main main main"
+    "sbr main main main"
+    "ftr ftr ftr ftr";
+}
+#box-1 {
+  background-color: red;
+  grid-area: hdr;
+}
+#box-2 {
+  background-color: blue;
+  grid-area: sbr;
+}
+#box-3 {
+  background-color: rgb(165, 92, 165);
+  grid-area: main;
+}
+#box-4 {
+  background-color: burlywood;
+  grid-area: ftr;
+}
+.ftr {
+  background-color: black;
+  width: 100%;
+  height: 200px;
+  margin-top: 50px;
+}
