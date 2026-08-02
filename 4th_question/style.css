@@ -26,6 +26,7 @@ body {
 .foot {
   display: flex;
   margin-top: 100px;
+  margin-bottom: 0;
 }
 .ftr-left {
   display: flex;
@@ -46,4 +47,25 @@ body {
   padding: 20px 20px;
   line-height: 1.5rem;
   justify-content: center;
+}
+
+@media (width <= 640px) {
+  .content {
+    flex-direction: column;
+    height: auto;
+  }
+  .details {
+    width: 100%;
+    padding: 20px;
+  }
+  .content img {
+    width: 100%;
+    height: auto;
+    margin-left: 0;
+    margin-top: 0;
+  }
+  .ftr-left {
+    width: 100%;
+    padding: 20px;
+  }
 }
