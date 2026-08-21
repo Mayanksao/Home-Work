@@ -161,3 +161,28 @@
 //   }
 //   console.log(str);
 // }
+
+// Q.10
+
+// function hollow_square(rows) {
+//   for (let i = 1; i <= rows; i++) {
+//     let str = "";
+
+//     for (let j = 1; j <= rows; j++) {
+//       if (
+//         i === 1 ||
+//         j === 1 ||
+//         i === rows ||
+//         j === rows ||
+//         i === j ||
+//         (i === i && j === rows + 1 - i)
+//       ) {
+//         str += "* ";
+//       } else {
+//         str += "  ";
+//       }
+//     }
+//     console.log(str);
+//   }
+// }
+// hollow_square(7);
