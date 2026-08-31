@@ -186,3 +186,35 @@
 //   }
 // }
 // hollow_square(7);
+
+// Q.11
+
+// function same_num_pattern(num) {
+//   console.log("12");
+
+//   for (let i = 1; i <= num; i++) {
+//     let str = "";
+
+//     for (let j = 1; j <= i; j++) {
+//       str += `${i} ${""}`;
+//     }
+//     console.log(str);
+//   }
+// }
+// same_num_pattern(5);
+
+// Q.12
+
+// function num_pattern(num) {
+//     console.log("11");
+
+//   for (let i = 1; i <= num; i++) {
+//     let str = "";
+
+//     for (let j = 1; j <= i; j++) {
+//       str += `${j} ${""}`;
+//     }
+//     console.log(str);
+//   }
+// }
+// num_pattern(5);
