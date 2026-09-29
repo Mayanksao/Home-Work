@@ -136,3 +136,33 @@
 //   }
 // }
 // isAnagram("listen", "silent");
+
+// Q.11
+
+// function charFrequency(str) {
+//   let obj = {};
+//   for (let char of str) {
+//     obj[char] = (obj[char] || 0) + 1;
+//   }
+//   console.log(obj);
+// }
+// charFrequency("Apple");
+
+// Q.12
+
+function compress(str) {
+  let count = 0;
+
+  for (let i = 0; i < str.length; i++) {
+    for (let j = 1; j <= str.length - (str.length-1); j++){
+      if (str[i] === str[j]){
+        count++;
+      }
+    }
+  }
+
+  console.log(str);
+  console.log(count);
+  
+}
+compress("Taabbbllleee");

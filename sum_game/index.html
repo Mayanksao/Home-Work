@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sum_Game</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background-color: #212121;
+        color: white;
+        display: flex;
+        justify-content: center;
+        margin-top: 5rem;
+      }
+
+      #div1 {
+        width: 50%;
+      }
+
+      #person-1 {
+        background-color: #414141;
+        width: 10rem;
+        height: 4rem;
+        color: white;
+      }
+
+      #ul-1 {
+        display: flex;
+        flex-direction: column;
+        color: white;
+        padding-top: 1rem;
+      }
+
+      #num-1 {
+        display: flex;
+        margin-top: 3px;
+      }
+
+      #div-2 {
+        width: 50%;
+      }
+
+      #person-2 {
+        background-color: #414141;
+        width: 10rem;
+        height: 4rem;
+        color: white;
+      }
+
+      #ul-2 {
+        color: white;
+        padding-top: 1rem;
+      }
+
+      #num-2 {
+        display: flex;
+        margin-top: 3px;
+      }
+
+      #rules-btn {
+        background-color: #414141;
+        width: 10rem;
+        height: 2rem;
+        color: white;
+        margin-top: 30rem;
+        margin-left: 15rem;
+      }
+
+      #div {
+        background-color: #212121;
+        width: 10rem;
+        height: 2rem;
+        color: white;
+        margin-top: -5rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="div1" id="div1">
+      <button id="person-1">Person-1</button>
+      <ul id="ul-1">
+        <li id="num-1">Person-1 Random Numbers:</li>
+      </ul>
+    </div>
+
+    <div class="div2" id="div2">
+      <button id="person-2">Person-2</button>
+      <ul id="ul-2">
+        <li id="num-2">Person-2 Random Numbers:</li>
+      </ul>
+    </div>
+
+    <div class="rules" id="rules">
+      <div class="div" id="div"></div>
+      <button id="rules-btn">Rules</button>
+    </div>
+    <script src="dom.js"></script>
+  </body>
+</html>
