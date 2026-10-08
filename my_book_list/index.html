@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book List</title>
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      background: linear-gradient(135deg, #181818, #242424);
+      color: #ffffff;
+      font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif;
+      padding: 2rem 1rem;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    #main-div {
+      background-color: #313131;
+      width: 20rem;
+      padding: 1rem;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    #book-img {
+      width: 3rem;
+    }
+
+    .title {
+      display: flex;
+    }
+
+    #table {
+      margin-top: 5px;
+      padding: 3px;
+      width: 25rem;
+      text-align: center;
+    }
+
+    #add-btn {
+      cursor: pointer;
+
+      transition:
+        background-color 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+    }
+  </style>
+  <body>
+    <form id="main-div">
+      <div class="title">
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZmV3-LsPaJxpu7fD2kYnd_vzMAF-jhqNuf3xlTsKRnZujAaTz94llI6tC&s=10"
+          alt="#"
+          id="book-img"
+        />
+        <h1>My Book List</h1>
+      </div>
+
+      <h4>Enter the Book Name:</h4>
+      <input type="text" id="book-name" />
+      <br /><br />
+
+      <h4>Enter the Author Name:</h4>
+      <input type="text" id="author-name" />
+      <br /><br />
+
+      <h4>Enter ISBN:</h4>
+      <input type="text" id="isbn" />
+
+      <button type="submit" id="add-btn">Add Book</button>
+    </form>
+
+    <table border="1" id="table">
+      <thead id="t-head">
+        <tr>
+          <td>Name</td>
+          <td>Author</td>
+          <td>ISBN</td>
+          <td>Delete</td>
+        </tr>
+      </thead>
+      <tbody id="list-body"></tbody>
+    </table>
+
+    <script src="dom.js"></script>
+  </body>
+</html>

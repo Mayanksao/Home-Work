@@ -1,0 +1,433 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Match the word</title>
+    <!-- <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background-color: #212121;
+        color: white;
+      }
+
+      #head-txt {
+        text-align: center;
+        gap: 2px;
+        color: blueviolet;
+      }
+
+      .difficulty {
+        background-color: #515151;
+        width: 20rem;
+        gap: 5px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 5px;
+        border-radius: 5px;
+        padding-top: 5px;
+      }
+
+      #easy-mode-btn {
+        background-color: #919191;
+        color: white;
+        width: 7rem;
+        height: 2.3rem;
+      }
+
+      #med-mode-btn {
+        background-color: #919191;
+        color: white;
+        width: 7rem;
+        height: 2.3rem;
+      }
+
+      #hard-mode-btn {
+        background-color: #919191;
+        color: white;
+        width: 7rem;
+        height: 2.3rem;
+      }
+
+      #ran-word-txt {
+        text-align: center;
+        font-size: xx-large;
+        margin-top: 7px;
+        background-color: #515151;
+      }
+
+      #random-word {
+        color: skyblue;
+        font-size: 4rem;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+      }
+
+      #input-txt {
+        margin-top: 7px;
+        margin-left: 30rem;
+        width: 15rem;
+      }
+
+      .extras {
+        text-align: center;
+        margin-top: 9px;
+        line-height: 25px;
+        background-color: #919191;
+        color: #212121;
+      }
+
+      #try-again {
+        margin-left: 38rem;
+        margin-top: 5px;
+      }
+    </style> -->
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      /* ================================
+   BODY
+================================ */
+
+      body {
+        min-height: 100vh;
+        background: linear-gradient(135deg, #181818, #242424);
+        color: #ffffff;
+
+        font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        padding: 2rem 1rem;
+      }
+
+      /* ================================
+   HEADING
+================================ */
+
+      #head-txt {
+        text-align: center;
+        margin-bottom: 1.5rem;
+
+        color: #a970ff;
+        font-size: 2.2rem;
+        font-weight: 700;
+        letter-spacing: 1px;
+
+        text-shadow: 0 0 15px rgba(169, 112, 255, 0.25);
+      }
+
+      /* ================================
+   DIFFICULTY SECTION
+================================ */
+
+      .difficulty {
+        width: min(100%, 420px);
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        gap: 10px;
+
+        padding: 1.2rem;
+
+        background: rgba(70, 70, 70, 0.8);
+
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 12px;
+
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+
+        backdrop-filter: blur(10px);
+      }
+
+      /* ================================
+   DIFFICULTY BUTTONS
+================================ */
+
+      #easy-mode-btn,
+      #med-mode-btn,
+      #hard-mode-btn {
+        width: 150px;
+        height: 42px;
+
+        border: none;
+        border-radius: 8px;
+
+        background: #666666;
+        color: #ffffff;
+
+        font-size: 15px;
+        font-weight: 600;
+
+        cursor: pointer;
+
+        transition:
+          background-color 0.2s ease,
+          transform 0.2s ease,
+          box-shadow 0.2s ease;
+      }
+
+      /* Hover */
+
+      #easy-mode-btn:hover,
+      #med-mode-btn:hover,
+      #hard-mode-btn:hover {
+        background: #8057c7;
+
+        transform: translateY(-2px);
+
+        box-shadow: 0 6px 15px rgba(128, 87, 199, 0.3);
+      }
+
+      /* Click */
+
+      #easy-mode-btn:active,
+      #med-mode-btn:active,
+      #hard-mode-btn:active {
+        transform: translateY(0);
+      }
+
+      /* Keyboard focus */
+
+      #easy-mode-btn:focus-visible,
+      #med-mode-btn:focus-visible,
+      #hard-mode-btn:focus-visible {
+        outline: 2px solid #b88cff;
+        outline-offset: 3px;
+      }
+
+      /* ================================
+   RANDOM WORD CONTAINER
+================================ */
+
+      #ran-word-txt {
+        width: min(100%, 700px);
+
+        margin-top: 1.5rem;
+        padding: 1.5rem;
+
+        text-align: center;
+
+        background: rgba(81, 81, 81, 0.8);
+
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 12px;
+
+        font-size: 1.3rem;
+
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+      }
+
+      /* ================================
+   RANDOM WORD
+================================ */
+
+      #random-word {
+        display: block;
+
+        margin-top: 0.5rem;
+
+        color: #61dafb;
+
+        font-size: clamp(2.5rem, 8vw, 4.5rem);
+
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+        font-weight: 700;
+
+        letter-spacing: 2px;
+
+        text-shadow: 0 0 20px rgba(97, 218, 251, 0.25);
+      }
+
+      /* ================================
+   INPUT
+================================ */
+
+      #input-txt {
+        width: min(100%, 350px);
+
+        height: 45px;
+
+        margin-top: 1rem;
+
+        padding: 0 1rem;
+
+        background: #303030;
+        color: #ffffff;
+
+        border: 2px solid #555;
+        border-radius: 8px;
+
+        font-size: 16px;
+
+        outline: none;
+
+        transition:
+          border-color 0.2s ease,
+          box-shadow 0.2s ease,
+          background-color 0.2s ease;
+      }
+
+      /* Input focus */
+
+      #input-txt:focus {
+        background: #292929;
+
+        border-color: #61dafb;
+
+        box-shadow: 0 0 0 3px rgba(97, 218, 251, 0.12);
+      }
+
+      /* Placeholder */
+
+      #input-txt::placeholder {
+        color: #999;
+      }
+
+      /* ================================
+   EXTRA INFORMATION
+================================ */
+
+      .extras {
+        width: min(100%, 500px);
+
+        margin-top: 1.2rem;
+
+        padding: 1rem;
+
+        text-align: center;
+
+        background: #919191;
+        color: #202020;
+
+        border-radius: 10px;
+
+        line-height: 1.8;
+
+        font-size: 15px;
+
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      }
+
+      /* ================================
+   TRY AGAIN BUTTON
+================================ */
+
+      #try-again {
+        margin-top: 1rem;
+
+        padding: 10px 22px;
+
+        border: none;
+        border-radius: 8px;
+
+        background: #a970ff;
+        color: white;
+
+        font-size: 15px;
+        font-weight: 600;
+
+        cursor: pointer;
+
+        transition:
+          background-color 0.2s ease,
+          transform 0.2s ease,
+          box-shadow 0.2s ease;
+      }
+
+      #try-again:hover {
+        background: #8f50e8;
+
+        transform: translateY(-2px);
+
+        box-shadow: 0 7px 18px rgba(169, 112, 255, 0.3);
+      }
+
+      #try-again:active {
+        transform: translateY(0);
+      }
+
+      /* ================================
+  RESPONSIVENESS
+================================ */
+
+      @media (max-width: 600px) {
+        body {
+          padding: 1.5rem 1rem;
+        }
+
+        #head-txt {
+          font-size: 1.8rem;
+        }
+
+        .difficulty {
+          padding: 1rem;
+        }
+
+        #ran-word-txt {
+          padding: 1.2rem;
+          font-size: 1.1rem;
+        }
+
+        #random-word {
+          font-size: clamp(2.2rem, 12vw, 3.5rem);
+        }
+
+        #input-txt {
+          width: 100%;
+        }
+
+        .extras {
+          font-size: 14px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1 id="head-txt">Match the Word</h1>
+
+    <div class="difficulty">
+      <h2>Choose the difficulty:</h2>
+      <button id="easy-mode-btn">Easy(6sec)</button>
+      <button id="med-mode-btn">Medium(10sec)</button>
+      <button id="hard-mode-btn">Hard(12sec)</button>
+    </div>
+
+    <div class="ran-word-txt" id="ran-word-txt">
+      Random Word:
+      <span id="random-word">Random</span>
+    </div>
+
+    <input type="text" placeholder="Enter your word..." id="input-txt" />
+
+    <div class="extras">
+      <h3>
+        Score:
+        <span id="score"></span>
+      </h3>
+      <h3>
+        Time left:
+        <span id="timer"></span>
+      </h3>
+    </div>
+
+    <button id="try-again"></button>
+
+    <script src="dom.js"></script>
+  </body>
+</html>
